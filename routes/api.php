@@ -21,3 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post("/form", function (Request $request){
     dd($request->all());
 });
+
+Route::get('/test', function (){
+    dd('ciao');
+});
