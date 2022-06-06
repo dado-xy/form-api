@@ -22,11 +22,11 @@ Route::post("/form", function (Request $request) {
     dd($request->all());
 });
 
-Route::get('/test', function () {
+Route::get('/test', function (Request $request) {
 
-    response = HttpResponse(json . dumps('{"status" : "success"}'))
-    response . __setitem__("Content-type", "application/json")
-    response . __setitem__("Access-Control-Allow-Origin", "*")
+    $request->header('Accept','application/json');
+    $request->header('Access-Control-Allow-Origin', '*');
+    $request->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
-    return response;
+    return response()->json(['Status'=>'success']);
 });
