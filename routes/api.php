@@ -18,10 +18,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post("/form", function (Request $request){
+Route::post("/form", function (Request $request) {
     dd($request->all());
 });
 
-Route::get('/test', function (){
-    dd('ciao');
+Route::get('/test', function () {
+
+    response = HttpResponse(json . dumps('{"status" : "success"}'))
+    response . __setitem__("Content-type", "application/json")
+    response . __setitem__("Access-Control-Allow-Origin", "*")
+
+    return response;
 });
