@@ -24,7 +24,7 @@ Route::post("/form", function (Request $request) {
     $request->header('Access-Control-Allow-Origin', '*');
     $request->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
-    return response()->json(['Status'=>'success']);});
+    return response()->json(['Data'=>$request->all() ,'Status'=>'Success']);});
 
 Route::get('/test', function (Request $request) {
 
@@ -32,5 +32,5 @@ Route::get('/test', function (Request $request) {
     $request->header('Access-Control-Allow-Origin', '*');
     $request->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
-    return response()->json(['Status'=>'success']);
+    return response()->json(['Status'=>'Success']);
 });
