@@ -19,8 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post("/form", function (Request $request) {
-    dd($request->all());
-});
+
+    $request->header('Accept','application/json');
+    $request->header('Access-Control-Allow-Origin', '*');
+    $request->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+
+    return response()->json(['Status'=>'success']);});
 
 Route::get('/test', function (Request $request) {
 
